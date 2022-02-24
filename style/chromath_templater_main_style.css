@@ -1,0 +1,7 @@
+#chromath-style-render::after {
+  content : 'This is a pseudo-selector in the Chromath templater stylesheet printing content.'
+}
+
+.chromath-demo {
+  font-size: 24px;
+}

@@ -1,0 +1,3 @@
+parasol,This is the Homepage,main,main,,
+parent-page,This is the Parent,main,main,parasol
+child-page,This is the Child,main,main,parent-page
