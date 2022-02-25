@@ -11,7 +11,7 @@ class Chromath_Home_Template {
     error_log('this is app the shell');
     ob_start();
     ?>
-    <div class="flexOuterCenter">
+<div class="flexOuterCenter">
   <div id="app">
     <div class="flexOuterCenter">
       <div id="backdrop"></div>

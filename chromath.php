@@ -31,17 +31,18 @@ if (is_admin()) {
      include_once 'classes/chromath_router.php';
   }
   // inject the subdomain of your app here:
-  $router = new Chromath_Router('chromath','chromath-icon');
+  $router = new Chromath_Router('chromathagraphic');
 
   // add names of main css and js files
   $frontend = new Chromath_Templater(
     $router,
+    ['main','button_link'],
     ['main'],
-    ['main'],
-    'child-styles'
+    'parasol-icon.png',
+    'child-style'
   );
 
-  add_action( 'wp_head', [$router,'favicon_tag'], 2, null );
+  add_action( 'wp_head', [$frontend,'favicon_tag'], 2, null );
 
 }
 
