@@ -32,12 +32,6 @@ class Chromath_Templater {
       );
     }
 
-    wp_register_style(
-      'font-awesome',
-      plugin_dir_url(__FILE__) . '../style/font-awesome-4.7.0/css/font-awesome.min.css'
-    );
-    wp_enqueue_style('font-awesome');
-
     //
     foreach ($this->script_handles as $script_handle) {
       wp_register_script(
@@ -65,6 +59,13 @@ class Chromath_Templater {
     //
     wp_dequeue_style($this->theme_handle);
     wp_deregister_style($this->theme_handle);
+    /*
+    wp_register_style(
+      'chromath_font-awesome',
+      plugin_dir_url(__FILE__) . '../style/font-awesome-4.7.0/css/font-awesome.min.css'
+    );
+    */
+    //wp_enqueue_style('chromath_font-awesome');
     // main stylesheet is always enqueued -
     wp_enqueue_style('chromath_main');
     // stylesheet args option -
@@ -99,8 +100,9 @@ class Chromath_Templater {
   public function favicon_tag() {
     // void - echo
     $uri_arr = explode('/',$_SERVER['REQUEST_URI']);
-    if (in_array($this->subdomain,$uri_arr)) {
-      $href = plugin_dir_path('chromath.php') . '/records/images/' . $this->favicon_filename;
+    if (in_array($this->router->subdomain,$uri_arr)) {
+
+      $href = plugin_dir_url(__FILE__) . '../records/images/' . $this->favicon_filename;
       $tag = "<link rel='icon' href='{$href}' type='image/x-icon' />";
       error_log($href);
       echo $tag;

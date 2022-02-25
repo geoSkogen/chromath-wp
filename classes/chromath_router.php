@@ -2,9 +2,8 @@
 
 class Chromath_Router {
 
-  protected $subdomain;
+  public $subdomain;
   protected $templates_path;
-  protected $favicon_filename;
 
   public function __construct($subdomain) {
     $this->subdomain = $subdomain;

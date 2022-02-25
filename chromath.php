@@ -38,7 +38,7 @@ if (is_admin()) {
     $router,
     ['main','button_link'],
     ['main'],
-    'parasol-icon.png',
+    'parasol.png',
     'child-style'
   );
 
